@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const JWT_SECRET = import.meta.VITE_SECRET;
+const JWT_EXPIRATION = import.meta.VITE_EXPIRATION;
 
 function Auth(req, res, next) {
   const token = req.headers["authorization"]?.split(" ")[1];
