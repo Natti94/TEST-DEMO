@@ -3,6 +3,11 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/",
   plugins: [react()],
+  server: {
+    proxy: {
+      "/login": "http://localhost:5000",
+      "/protected": "http://localhost:5000",
+    },
+  },
 });

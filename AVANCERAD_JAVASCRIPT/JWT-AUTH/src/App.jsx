@@ -5,15 +5,12 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>JWT Authentication</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/protected" element={<Protected />} />
         </Routes>
       </BrowserRouter>
-    </div>
   );
 }
 export default App;
