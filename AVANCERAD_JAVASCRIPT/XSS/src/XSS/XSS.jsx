@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DOMPURIFY from "dompurify";
 
 function XSS() {
   const [input, setInput] = useState("");
