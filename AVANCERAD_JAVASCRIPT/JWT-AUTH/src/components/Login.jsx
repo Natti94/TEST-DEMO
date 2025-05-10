@@ -1,6 +1,5 @@
 import { useState } from "react";
-import dotenv from "dotenv";
-dotenv.config();
+
 const PORT = import.meta.env.VITE_PORT;
 
 function Login() {
