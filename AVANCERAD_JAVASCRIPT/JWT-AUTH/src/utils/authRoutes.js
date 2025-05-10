@@ -6,8 +6,8 @@ import dotenv from "dotenv";
 dotenv.config();
 const router = Router();
 
-const EXPIRATION = import.meta.VITE_EXPIRATION;
-const SECRET = import.meta.VITE_SECRET;
+const EXPIRATION = process.env.EXPIRATION;
+const SECRET = process.env.SECRET;
 
 router.post("/login", (req, res) => {
   const { username, password } = req.body;

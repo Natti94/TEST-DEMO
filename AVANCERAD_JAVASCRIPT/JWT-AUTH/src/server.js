@@ -5,13 +5,11 @@ import cors from "cors";
 
 dotenv.config();
 
+const PORT = process.env.PORT;
+
 const app = express();
 app.use(express.json());
 app.use(cors());
-
-const PORT = import.meta.env.VITE_PORT;
-
-app.use(express.json());
 app.use("/", router);
 
 app.listen(PORT, () => {

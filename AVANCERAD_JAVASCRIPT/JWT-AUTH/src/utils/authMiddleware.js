@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const SECRET = import.meta.VITE_SECRET;
+const SECRET = process.env.SECRET;
 
 function Auth(req, res, next) {
   const token = req.headers["authorization"]?.split(" ")[1];

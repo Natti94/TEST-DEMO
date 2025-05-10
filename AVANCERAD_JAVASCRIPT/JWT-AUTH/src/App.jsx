@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <h1>JWT Authentication Example</h1>
-      <Router basename="/JWT-AUTH/">
+      <Router>
         <Routes>
           <Route path="/" element={<Login />} />
         </Routes>
