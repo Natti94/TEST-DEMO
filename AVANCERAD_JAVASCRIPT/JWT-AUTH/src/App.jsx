@@ -5,12 +5,12 @@ import "./App.css";
 
 function App() {
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/protected" element={<Protected />} />
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/protected" element={<Protected />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 export default App;
