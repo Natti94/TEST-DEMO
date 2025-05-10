@@ -1,21 +1,18 @@
-import Login from "./components/Login";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  BrowserRouter,
-} from "react-router-dom";
+import Login from "./components/Login/Login";
+import Protected from "./components/Protected/Protected";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>JWT Authentication Example</h1>
-      <Router>
+      <h1>JWT Authentication</h1>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/protected" element={<Protected />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
