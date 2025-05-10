@@ -1,7 +1,6 @@
 import JWT from "jsonwebtoken";
 import dotenv from "dotenv";
 
-
 dotenv.config();
 
 const SECRET = import.meta.VITE_SECRET;

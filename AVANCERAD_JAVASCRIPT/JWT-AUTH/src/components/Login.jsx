@@ -1,4 +1,7 @@
 import { useState } from "react";
+import dotenv from "dotenv";
+dotenv.config();
+const PORT = import.meta.env.VITE_PORT;
 
 function Login() {
   const [username, setUsername] = useState("natnael");
@@ -7,7 +10,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch(`http://localhost:${PORT}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +53,7 @@ function Login() {
             required
           />
         </div>
-        <button type="submit" >Login</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
