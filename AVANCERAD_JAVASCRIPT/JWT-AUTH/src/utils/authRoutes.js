@@ -1,16 +1,18 @@
 import { Router } from "express";
-import { jsonwebtoken } from "jsonwebtoken";
+import JWT from "jsonwebtoken";
+import Auth from "./authMiddleware.js";
 import dotenv from "dotenv";
 
 dotenv.config();
+const router = Router();
 
 const EXPIRATION = import.meta.VITE_EXPIRATION;
 const SECRET = import.meta.VITE_SECRET;
 
-Router.post("/login", (req, res) => {
+router.post("/login", (req, res) => {
   const { username, password } = req.body;
   if (username === "natnael" && password === "berhane") {
-    const token = jsonwebtoken.sign({ username }, import.meta.VITE_SECRET, {
+    const token = JWT.sign({ username }, SECRET, {
       expiresIn: EXPIRATION,
     });
     res.json({ token });
@@ -19,6 +21,12 @@ Router.post("/login", (req, res) => {
   }
 });
 
-Router.get("/protected", middleware, (req, res) => {
+router.get("/protected", Auth, (req, res) => {
   res.json({ message: "This is a protected route", user: req.user });
 });
+
+router.get("/logout", (req, res) => {
+  res.json({ message: "Logged out successfully" });
+});
+
+export default router;
