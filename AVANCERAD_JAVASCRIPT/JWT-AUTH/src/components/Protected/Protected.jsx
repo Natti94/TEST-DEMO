@@ -1,4 +1,3 @@
-const PORT = 3000;
 
 function Protected() {
   router.post("/logout", (req, res) => {
@@ -14,7 +13,7 @@ function Protected() {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:${PORT}/logout`, {
+      const response = await fetch("http://localhost:5000/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

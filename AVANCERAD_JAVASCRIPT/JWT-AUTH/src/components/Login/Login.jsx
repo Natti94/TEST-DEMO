@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-const PORT = 3000;
-
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -9,7 +7,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:${PORT}/login`, {
+      const response = await fetch("http://localhost:5000/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
