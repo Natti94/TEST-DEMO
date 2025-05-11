@@ -6,9 +6,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/login": "http://localhost:5000", 
-      "/protected": "http://localhost:5000",
-      "/logout": "http://localhost:5000",
+      "/login": "http://localhost:80", 
+      "/protected": "http://localhost:80",
+      "/logout": "http://localhost:80",
     },
   },
 });
