@@ -1,10 +1,10 @@
-import XSS from "./XSS/XSS";
-import "./App.css";
+import InputField from "./XSS/InputField";
+import "App.css";
 
 function App() {
   return (
     <>
-      <XSS />
+      <InputField />
     </>
   );
 }
